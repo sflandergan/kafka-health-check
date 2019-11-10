@@ -3,3 +3,10 @@ logging:
     com.deviceinsight.kafkahealthcheck.kafkahealthcheck: DEBUG
     org.springframework: DEBUG
 
+kafka:
+  health:
+    healthUpdate:
+      strategy: com.deviceinsight.kafka.health.strategy.DelayedHealthUpdateStrategy
+      properties:
+        minimumDelay: PT5s
+        maximumDelay: PT10s
